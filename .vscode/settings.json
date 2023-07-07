@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/4849a19b-080c-4ecb-a6f5-9f70c4547e99/resourceGroups/DEV_GBeasts_Bots_Resources/providers/Microsoft.Web/sites/AgravainBot-Dev",
+    "appService.deploySubpath": "."
+}
