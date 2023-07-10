@@ -24,7 +24,6 @@ app.use('/users', usersRouter);
 
 console.log("Funcionando");
 
-
 /*********************************************
 //Añadimos desarrollo de Agravain
 //const express = require('express');
