@@ -31,13 +31,13 @@ const { ActivityTypes } = require('botbuilder');
 const { BotFrameworkAdapter } = require('botbuilder');
 const { TurnContext } = require('botbuilder');
 const axios = require('axios');
-/*
+
 //const app = express();
 const adapter = new BotFrameworkAdapter({
     appId: process.env.MicrosoftAppId,
     appPassword: process.env.MicrosoftAppPassword
 });
-
+/*
 app.listen(process.env.PORT || 3978, () => {
   console.log(`Servidor escuchando en el puerto ${process.env.PORT || 3978}`);
 });
