@@ -24,7 +24,7 @@ app.use('/users', usersRouter);
 
 console.log("Funcionando");
 
-/*********************************************/
+/*********************************************
 //Añadimos desarrollo de Agravain
 //const express = require('express');
 const { ActivityTypes } = require('botbuilder');
@@ -162,7 +162,7 @@ app.post('/api/messages', (req, res) => {
   });
 }); 
 
-/**********************************************/
+**********************************************/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
