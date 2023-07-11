@@ -24,14 +24,14 @@ app.use('/users', usersRouter);
 
 console.log("Funcionando");
 
-/*********************************************
+/*********************************************/
 //Añadimos desarrollo de Agravain
 //const express = require('express');
 const { ActivityTypes } = require('botbuilder');
 const { BotFrameworkAdapter } = require('botbuilder');
 const { TurnContext } = require('botbuilder');
 const axios = require('axios');
-
+/*
 //const app = express();
 const adapter = new BotFrameworkAdapter({
     appId: process.env.MicrosoftAppId,
