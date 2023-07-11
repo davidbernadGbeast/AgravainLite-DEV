@@ -38,9 +38,9 @@ const adapter = new BotFrameworkAdapter({
     appPassword: process.env.MicrosoftAppPassword
 });
 
-app.listen(process.env.PORT || 3978, () => {
+/*app.listen(process.env.PORT || 3978, () => {
   console.log(`Servidor escuchando en el puerto ${process.env.PORT || 3978}`);
-});
+});*/
 
 const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?projectName=Agravain-Orchestation&deploymentName=Agravain-Orchestation-Deployment-v0.1&api-version=2022-10-01-preview';
 const subscriptionKey = '00e95f52cb4e409dad41116c1e15593a';
