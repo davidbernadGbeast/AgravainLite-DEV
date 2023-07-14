@@ -25,9 +25,9 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+/*server.listen(port);
 server.on('error', onError);
-server.on('listening', onListening);
+server.on('listening', onListening);*/
 
 /**
  * Normalize a port into a number, string, or false.
@@ -107,9 +107,11 @@ const adapter = new BotFrameworkAdapter({
   console.log(`Servidor escuchando en el puerto ${process.env.PORT || 3978}`);
 });*/
 
-/*app.listen(process.env.PORT || 80, () => {
-    console.log(`Servidor escuchando en el puerto ${process.env.PORT || 80}`);
-});*/
+console.log(app.port)
+
+app.listen(process.env.PORT || port, () => {
+    console.log(`Servidor escuchando en el puerto ${process.env.PORT || port}`);
+});
 
 const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?projectName=Agravain-Orchestation&deploymentName=Agravain-Orchestation-Deployment-v0.1&api-version=2022-10-01-preview';
 const subscriptionKey = '00e95f52cb4e409dad41116c1e15593a';
