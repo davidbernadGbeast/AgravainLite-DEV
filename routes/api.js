@@ -109,8 +109,8 @@ router.post('/messages', (req, res) => {
                                           const category = entity.category;
                                           const text = entity.text;
                                           // ...
-                                          //await context.sendActivity(category + ': ' + text);
-                                          switch (entity.category){
+                                          await context.sendActivity(category + ': ' + text);
+                                          /*switch (entity.category){
                                             case 'CheckBuild':
 
                                             break;
@@ -127,7 +127,7 @@ router.post('/messages', (req, res) => {
                                             case else
 
                                             break;
-                                          }
+                                          }*/
                                       }
                                   }
 
