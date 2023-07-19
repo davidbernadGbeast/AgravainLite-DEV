@@ -110,6 +110,24 @@ router.post('/messages', (req, res) => {
                                           const text = entity.text;
                                           // ...
                                           //await context.sendActivity(category + ': ' + text);
+                                          switch (entity.category){
+                                            case 'CheckBuild':
+
+                                            break;
+                                            case 'CheckChampion':
+
+                                            break;
+                                            case 'CheckGames':
+
+                                            break;
+                                            case 'CheckGBI':
+                                                //call service for GBI
+                                                //getGBI(entity.text)
+                                            break;
+                                            case else
+
+                                            break;
+                                          }
                                       }
                                   }
 
