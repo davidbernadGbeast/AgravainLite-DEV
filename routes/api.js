@@ -101,6 +101,9 @@ router.post('/messages', (req, res) => {
 
                                   // Accede a los datos específicos que necesitas
                                   const query = prediction.query;
+                                  await context.sendActivity(query);
+                                  await context.sendActivity(topIntent);
+                                  await context.sendActivity(entities);
                                   
                                   // Ejemplo de cómo puedes trabajar con las entidades
                                   if (entities && entities.length > 0) {
@@ -109,25 +112,8 @@ router.post('/messages', (req, res) => {
                                           const category = entity.category;
                                           const text = entity.text;
                                           // ...
-                                          await context.sendActivity(category + ': ' + text);
-                                          /*switch (entity.category){
-                                            case 'CheckBuild':
-
-                                            break;
-                                            case 'CheckChampion':
-
-                                            break;
-                                            case 'CheckGames':
-
-                                            break;
-                                            case 'CheckGBI':
-                                                //call service for GBI
-                                                //getGBI(entity.text)
-                                            break;
-                                            case else
-
-                                            break;
-                                          }*/
+                                          await context.sendActivity(prediction.topIntent + ' - ' category + ': ' + text);
+                                          
                                       }
                                   }
 
