@@ -112,8 +112,8 @@ router.post('/messages', (req, res) => {
                                           const category = entity.category;
                                           const text = entity.text;
                                           // ...
-                                          await context.sendActivity(prediction.topIntent + ' - ' category + ': ' + text);
-                                          
+                                          await context.sendActivity(prediction.topIntent + ' - ' + category + ': ' + text);
+                                          //await context.sendActivity(prediction.topIntent + ' - ' category + ': ' + text);
                                       }
                                   }
 
