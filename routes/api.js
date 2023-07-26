@@ -101,9 +101,9 @@ router.post('/messages', (req, res) => {
 
                                   // Accede a los datos específicos que necesitas
                                   const query = prediction.query;
-                                  await context.sendActivity(query);
-                                  await context.sendActivity(topIntent);
-                                  await context.sendActivity(entities);
+                                  await context.sendActivity('query: ' + query);
+                                  await context.sendActivity('topIntent: ' + topIntent);
+                                  await context.sendActivity('entities: ' + entities);
                                   
                                   // Ejemplo de cómo puedes trabajar con las entidades
                                   if (entities && entities.length > 0) {
