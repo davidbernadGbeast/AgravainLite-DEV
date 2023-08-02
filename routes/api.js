@@ -103,7 +103,7 @@ router.post('/messages', (req, res) => {
                                     const query = prediction.query;
                                     
                                     // Ejemplo de cómo puedes trabajar con las entidades
-                                    if (entities && entities.length > 0) {
+                                    /*if (entities && entities.length > 0) {
                                         for (let i = 0; i < entities.length; i++) {
                                             const entity = entities[i];
                                             const category = entity.category;
@@ -111,7 +111,7 @@ router.post('/messages', (req, res) => {
                                             // ...
                                             await context.sendActivity(prediction.topIntent + ' - ' + category + ': ' + text);
                                         }
-                                    }
+                                    }*/
 
                                     switch (topIntent){
                                         case 'CheckGBI':
@@ -120,10 +120,10 @@ router.post('/messages', (req, res) => {
                                                     const entity = entities[i];
                                                     const category = entity.category;
                                                     const text = entity.text;
-                                                    if (category == "summoner"){
-                                                        if(category.text == "mi"){
+                                                    if (category === 'summoner'){
+                                                        if(text === 'mi'){
                                                             //llamar al servicio pasándole el summoner del jugador
-                                                            await context.sendActivity('Tu GBI es de ' + prediction.topIntent);
+                                                            await context.sendActivity('Tu GBI es de ' + topIntent);
                                                         }
                                                         else{
                                                             //llamar al servicio pasándole el summoner text
@@ -144,9 +144,9 @@ router.post('/messages', (req, res) => {
 
                                         case 'CheckBuild':
 
-                                        else{
-
-                                        }
+                                        default:
+                                            // Manejar casos no reconocidos.
+                                            await context.sendActivity('No he entendido bien tu pregunta. ¿Puedes formularla de forma diferente?');
                                     }
 
                                     // Hay que pasarle topIntent y entities[], y dentro de cada entity tendremos:
