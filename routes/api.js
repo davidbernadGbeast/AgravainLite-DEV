@@ -95,29 +95,65 @@ router.post('/messages', (req, res) => {
                           case 'Agravain-Language':
                               // Lógica para Agravain-Language
                               if (intents && intents['Agravain-Language'] && intents['Agravain-Language'].result && intents['Agravain-Language'].result.prediction) {
-                                  const prediction = intents['Agravain-Language'].result.prediction;
-                                  const topIntent = prediction.topIntent;
-                                  const entities = prediction.entities;
+                                    const prediction = intents['Agravain-Language'].result.prediction;
+                                    const topIntent = prediction.topIntent;
+                                    const entities = prediction.entities;
 
-                                  // Accede a los datos específicos que necesitas
-                                  const query = prediction.query;
-                                  await context.sendActivity('query: ' + query);
-                                  await context.sendActivity('topIntent: ' + topIntent);
-                                  await context.sendActivity('entities: ' + entities);
-                                  
-                                  // Ejemplo de cómo puedes trabajar con las entidades
-                                  if (entities && entities.length > 0) {
-                                      for (let i = 0; i < entities.length; i++) {
-                                          const entity = entities[i];
-                                          const category = entity.category;
-                                          const text = entity.text;
-                                          // ...
-                                          await context.sendActivity(prediction.topIntent + ' - ' + category + ': ' + text);
-                                          //await context.sendActivity(prediction.topIntent + ' - ' category + ': ' + text);
-                                      }
-                                  }
+                                    // Accede a los datos específicos que necesitas
+                                    const query = prediction.query;
+                                    
+                                    // Ejemplo de cómo puedes trabajar con las entidades
+                                    if (entities && entities.length > 0) {
+                                        for (let i = 0; i < entities.length; i++) {
+                                            const entity = entities[i];
+                                            const category = entity.category;
+                                            const text = entity.text;
+                                            // ...
+                                            await context.sendActivity(prediction.topIntent + ' - ' + category + ': ' + text);
+                                        }
+                                    }
 
-                                  // ... Otras operaciones o lógica relacionada con Agravain-Language ...
+                                    switch (topIntent){
+                                        case 'CheckGBI':
+                                            if (entities && entities.length > 0) {
+                                                for (let i = 0; i < entities.length; i++) {
+                                                    const entity = entities[i];
+                                                    const category = entity.category;
+                                                    const text = entity.text;
+                                                    if (category == "summoner"){
+                                                        if(category.text == "mi"){
+                                                            //llamar al servicio pasándole el summoner del jugador
+                                                            await context.sendActivity('Tu GBI es de ' + prediction.topIntent);
+                                                        }
+                                                        else{
+                                                            //llamar al servicio pasándole el summoner text
+                                                            await context.sendActivity('El GBI de ' + text + ' es ' + category);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        case 'CheckGBIinTime':
+
+                                        case 'CheckTopGBI':
+
+                                        case 'CheckWorstGBI':
+
+                                        case 'GoodGBI':
+
+                                        case 'CheckChampion':
+
+                                        case 'CheckBuild':
+
+                                        else{
+
+                                        }
+                                    }
+
+                                    // Hay que pasarle topIntent y entities[], y dentro de cada entity tendremos:
+                                    // entities[i].category
+                                    // entities[i].text
+
+                                    // ... Otras operaciones o lógica relacionada con Agravain-Language ...
 
                               } else {
                                   console.error('No se encontraron resultados para el intent Agravain-Language');
