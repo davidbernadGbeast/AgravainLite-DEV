@@ -18,8 +18,8 @@ const axios = require('axios');
 //const app = express();
 //const app2 = express();
 const adapter = new BotFrameworkAdapter({
-    appId: '6da5ddd8-013b-4f9d-a42b-821f8035dbd1',
-    appPassword: 'zAh8Q~.rf__BmWBTYQHyqYWKe7bP814hP6HfRdq2'
+    appId: 'c3605a0d-4c92-4e33-9b72-8e860a274247',
+    appPassword: '6fV8Q~-lwZ0egkgDmxQXblh.xfbXqX3zyoxg2asM'
 });
 
 /*app2.listen(process.env.PORT || 3978, () => {
