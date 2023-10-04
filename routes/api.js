@@ -22,7 +22,8 @@ const adapter = new BotFrameworkAdapter({
     appPassword: '6fV8Q~-lwZ0egkgDmxQXblh.xfbXqX3zyoxg2asM'
 });
 
-const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?projectName=Agravain-Lite&deploymentName=AgravainLite-Deployment&api-version=2022-10-01-preview';
+//const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?projectName=Agravain-Lite&deploymentName=AgravainLite-Deployment&api-version=2022-10-01-preview';
+const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?api-version=2022-10-01-preview';
 const subscriptionKey = '00e95f52cb4e409dad41116c1e15593a';
 const requestId = '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a';
 
