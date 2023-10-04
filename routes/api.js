@@ -28,9 +28,12 @@ const requestId = '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a';
 
 router.post('/messages', (req, res) => {
   adapter.processActivity(req, res, async (context) => {
+        await context.sendActivity('Paso 1');
       if (context.activity.type === ActivityTypes.Message) {
           const turnContext = new TurnContext(adapter, context.activity);
           turnContext.activity.endpoint = url;
+
+          await context.sendActivity('Paso 2');
           
           if (context.activity.endpoint === url) {
               // Enviar la frase del usuario al nuevo endpoint
