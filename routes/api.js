@@ -15,8 +15,6 @@ const { TurnContext } = require('botbuilder');
 const axios = require('axios');
 
 
-//const app = express();
-//const app2 = express();
 const adapter = new BotFrameworkAdapter({
     appId: 'c3605a0d-4c92-4e33-9b72-8e860a274247',
     appPassword: '6fV8Q~-lwZ0egkgDmxQXblh.xfbXqX3zyoxg2asM'
@@ -28,6 +26,7 @@ const subscriptionKey = '00e95f52cb4e409dad41116c1e15593a';
 const requestId = '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a';
 
 router.post('/messages', (req, res) => {
+    console.log('Paso 0');
   adapter.processActivity(req, res, async (context) => {
         await context.sendActivity('Paso 1');
       if (context.activity.type === ActivityTypes.Message) {
