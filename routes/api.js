@@ -27,9 +27,9 @@ const requestId = '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a';
 router.post('/messages', (req, res) => {
     console.log('Log Paso 0');
     console.error('Error Paso 0');
-    /*adapter.processActivity(req, res, async (context) => {
+    adapter.processActivity(req, res, async (context) => {
         await context.sendActivity('Paso 1');
-        if (context.activity.type === ActivityTypes.Message) {
+        /*if (context.activity.type === ActivityTypes.Message) {
             const turnContext = new TurnContext(adapter, context.activity);
             turnContext.activity.endpoint = url;
 
@@ -103,8 +103,8 @@ router.post('/messages', (req, res) => {
             }
         } else {
             await context.sendActivity('Hola, soy Agravain, tu asistente virtual.');
-        }
-    });*/
+        }*/
+    });
 }); 
 
 /**********************************************/
