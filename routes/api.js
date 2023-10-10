@@ -17,7 +17,7 @@ const axios = require('axios');
 
 const adapter = new BotFrameworkAdapter({
     appId: 'c3605a0d-4c92-4e33-9b72-8e860a274247',
-    appPassword: '6fV8Q~-lwZ0egkgDmxQXblh.xfbXqX3zyoxg2asM'
+    appPassword: 'RyI8Q~~neFWNgoYLYIwKQEOZw27Pzvl9ZqziOcJk'
 });
 
 const url = 'https://dev-agravainbot.cognitiveservices.azure.com/language/:analyze-conversations?projectName=Agravain-Lite&deploymentName=AgravainLite-Deployment&api-version=2022-10-01-preview';
