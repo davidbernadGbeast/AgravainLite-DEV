@@ -25,8 +25,8 @@ const subscriptionKey = '00e95f52cb4e409dad41116c1e15593a';
 const requestId = '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a';
 
 router.post('/messages', (req, res) => {
-    console.log('Paso 0');
-    console.error('Paso 0');
+    console.log('Log Paso 0');
+    console.error('Error Paso 0');
     /*adapter.processActivity(req, res, async (context) => {
         await context.sendActivity('Paso 1');
         if (context.activity.type === ActivityTypes.Message) {
