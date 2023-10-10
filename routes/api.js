@@ -30,7 +30,7 @@ router.post('/messages', (req, res) => {
     adapter.processActivity(req, res, async (context) => {
         await context.sendActivity('Paso 1');
         if (context.activity.type === ActivityTypes.Message) {
-            /*const turnContext = new TurnContext(adapter, context.activity);
+            const turnContext = new TurnContext(adapter, context.activity);
             turnContext.activity.endpoint = url;
 
             await context.sendActivity('Paso 2');
@@ -100,7 +100,7 @@ router.post('/messages', (req, res) => {
                 } catch (error) {
                     console.error("error: " + error);
                 }
-            }*/
+            }
         } else {
             await context.sendActivity('Hola, soy Agravain, tu asistente virtual.');
         }
